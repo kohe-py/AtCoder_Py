@@ -18,8 +18,8 @@ class Combination:
 
         for i in range(2, N):
             self.fac[i] = self.fac[i - 1] * i % self.mod
-            self.inv_ele = (self.mod
-                            - self.inv_ele[self.mod % i] * (self.mod / i)
+            self.inv_ele[i] = (self.mod
+                            - self.inv_ele[self.mod % i] * (self.mod // i)
                             ) % self.mod
             self.fac_inv[i] = self.fac_inv[i - 1] * self.inv_ele[i] % self.mod
 
